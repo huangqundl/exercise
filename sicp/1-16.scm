@@ -1,0 +1,11 @@
+(define (expt b n)
+  (define (square x) (* x x))
+  (define (expt-iter a b n)
+    (cond ((= n 0) a)
+          ((= 0 (/ n 2)) (expt-iter a (square b) (/ n 2)))
+          (else (expt-iter (* a b)
+                           (square b)
+                           (/ (- n 1) 2)))))
+  (expt-iter 1 b n))
+
+(expt 2 3)

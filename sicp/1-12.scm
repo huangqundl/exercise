@@ -1,0 +1,15 @@
+(define (cal row col)
+  (if (or (= col 1) (= col row)) 1
+      (+ (cal (- row 1) (- col 1))
+         (cal (- row 1) col))))
+
+(cal 1 1)
+(cal 2 1)
+(cal 2 2)
+(cal 3 1)
+(cal 3 2)
+(cal 3 3)
+(cal 4 1)
+(cal 4 2)
+(cal 4 3)
+(cal 4 4)
